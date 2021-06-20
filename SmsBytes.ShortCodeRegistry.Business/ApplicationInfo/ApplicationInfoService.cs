@@ -8,10 +8,16 @@ namespace SmsBytes.ShortCodeRegistry.Business.ApplicationInfo
     }
     public class ApplicationInfoService : IApplicationInfoService
     {
+        private readonly IApplicationGraphqlClient _graphqlClient;
+
+        public ApplicationInfoService(IApplicationGraphqlClient graphqlClient)
+        {
+            _graphqlClient = graphqlClient;
+        }
+
         public async Task<ExternalApplicationModel> GetApplicationInfo(string applicationId, string authHeader)
         {
-            var client = new ApplicationGraphqlClient("http://localhost:35000/graphql");
-            return await client.GetApplicationInfo(applicationId, authHeader);
+            return await _graphqlClient.GetApplicationInfo(applicationId, authHeader);
         }
     }
 }
