@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmsBytes.ShortCodeRegistry.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmsBytes.ShortCodeRegistry.Common", "SmsBytes.ShortCodeRegistry.Common\SmsBytes.ShortCodeRegistry.Common.csproj", "{21EB1C0F-3AF3-475C-8667-1BF3B351DABA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmsBytes.ShortCodeRegistry.Business", "SmsBytes.ShortCodeRegistry.Business\SmsBytes.ShortCodeRegistry.Business.csproj", "{59954829-790F-48F2-B76F-4421730DB377}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{21EB1C0F-3AF3-475C-8667-1BF3B351DABA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21EB1C0F-3AF3-475C-8667-1BF3B351DABA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{21EB1C0F-3AF3-475C-8667-1BF3B351DABA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59954829-790F-48F2-B76F-4421730DB377}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59954829-790F-48F2-B76F-4421730DB377}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59954829-790F-48F2-B76F-4421730DB377}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59954829-790F-48F2-B76F-4421730DB377}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

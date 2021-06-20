@@ -7,7 +7,7 @@ namespace SmsBytes.ShortCodeRegistry.Storage
     public class ApplicationContext : DbContext
     {
         private readonly DatabaseConfig _db;
-        public DbSet<Weather> Weathers { set; get; }
+        public DbSet<ShortCodeDetails> ShortCodeDetails { set; get; }
 
         public ApplicationContext(DbContextOptions options, IOptions<DatabaseConfig> dbOption) : base(options)
         {

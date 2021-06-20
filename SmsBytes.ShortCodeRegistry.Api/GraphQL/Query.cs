@@ -1,5 +1,9 @@
-using System.Threading.Tasks;
+using GraphQL;
+using GraphQL.DataLoader;
+using GraphQL.Types;
 using Micro.GraphQL.Federation;
+using SmsBytes.ShortCodeRegistry.Api.GraphQL.DataLoaders;
+using SmsBytes.ShortCodeRegistry.Api.GraphQL.Extensions;
 using SmsBytes.ShortCodeRegistry.Api.GraphQL.Types;
 using SmsBytes.ShortCodeRegistry.Storage;
 
@@ -7,15 +11,13 @@ namespace SmsBytes.ShortCodeRegistry.Api.GraphQL
 {
     public sealed class Query : Query<EntityType>
     {
-        public Query()
+        public Query(ShortCodeDetailsByApplicationLoader loader)
         {
-            Field<WeatherType, Weather>()
-                .Name("weather")
-                .ResolveAsync(x => Task.FromResult(new Weather
-                {
-                    Id = "id",
-                    Temperature = 23.3
-                }));
+            Field<ShortCodeDetailsType, ShortCodeDetails>()
+                .Name("shortCodeDetails")
+                .Argument<NonNullGraphType<StringGraphType>>("id")
+                .ResolveAsync(x => loader.LoadAsync(x.GetArgument<string>("id")))
+                .RequirePermission("short_code:view");
         }
     }
 }
