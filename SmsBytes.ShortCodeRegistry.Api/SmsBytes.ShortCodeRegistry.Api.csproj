@@ -32,6 +32,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\SmsBytes.ShortCodeRegistry.Business\SmsBytes.ShortCodeRegistry.Business.csproj" />
       <ProjectReference Include="..\SmsBytes.ShortCodeRegistry.Storage\SmsBytes.ShortCodeRegistry.Storage.csproj" />
     </ItemGroup>
 

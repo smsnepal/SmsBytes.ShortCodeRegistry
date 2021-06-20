@@ -1,6 +1,6 @@
 using System;
 
-namespace SmsBytes.ShortCodeRegistry.Api.GraphQL.Directives.Exceptions
+namespace SmsBytes.ShortCodeRegistry.Business.Exceptions
 {
     public class NotAuthorizedException : Exception
     {

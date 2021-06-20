@@ -4,7 +4,7 @@ namespace SmsBytes.ShortCodeRegistry.Api.GraphQL.Types
     {
         public EntityType()
         {
-            Type<WeatherType>();
+            Type<ApplicationType>();
         }
     }
 }

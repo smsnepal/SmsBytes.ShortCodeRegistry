@@ -9,7 +9,9 @@ using GraphQL.Types;
 using Micro.GraphQL.Federation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
+using SmsBytes.ShortCodeRegistry.Api.GraphQL.DataLoaders;
 using SmsBytes.ShortCodeRegistry.Api.GraphQL.Directives;
+using SmsBytes.ShortCodeRegistry.Api.GraphQL.Inputs;
 using SmsBytes.ShortCodeRegistry.Api.GraphQL.Types;
 
 namespace SmsBytes.ShortCodeRegistry.Api.GraphQL.Extensions
@@ -25,7 +27,12 @@ namespace SmsBytes.ShortCodeRegistry.Api.GraphQL.Extensions
             services.AddSingleton<IDocumentExecutionListener, DataLoaderDocumentListener>();
             services.AddTransient<ISchema, StarterSchema>();
             services.AddTransient<Query>();
-            services.AddTransient<WeatherType>();
+            services.AddTransient<Mutation>();
+            services.AddTransient<ShortCodeDetailsByApplicationLoader>();
+            services.AddTransient<ApplicationType>();
+            services.AddTransient<ShortCodeDetailsType>();
+            services.AddTransient<SetShortCodeInput>();
+            services.AddScoped<RequirePermissionDirectiveVisitor>();
             services.AddScoped<AuthorizeDirectiveVisitor>();
             services
                 .AddGraphQL(options =>
